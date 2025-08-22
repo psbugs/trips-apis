@@ -15,7 +15,7 @@ const createTrip = async (req, res) => {
 // Get all trips
 const getAllTrips = async (req, res) => {
   try {
-    const trips = await Trips.find().select({ name: 1, _id: 0, createdAt: 0 });
+    const trips = await Trips.find().select({ name: 1, _id: 0 });
     if (!trips.length) res.status(401).json({ message: 'No trips found', status: 0 })
     res.json(trips);
   } catch (error) {
